@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='images/bg1.jpg') }}");
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.473);
+        }
+
+        header {
+            background-color: #16c2d5; /* cyan */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #10217d;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #16c2d5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.473);
+            border-radius: 8px;
+            flex: 1;
+            position: relative;
+            overflow: hidden; /* Ensure the image doesn't overflow from the container */
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("{{ url_for('static', filename='images/dec.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7; /* Adjust the opacity to control intensity */
+            z-index: -1; /* Place the background behind other content */
+        }
+
+        h1, h2, p {
+            color: rgba(0, 0, 0, 0.8); /* Darker text with opacity */
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.473);
+        }
+
+        h2 {
+            color:#10217d ;
+            text-align: center;
+            font-style: italic;
+            font-size: large;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-top: 10;
+            font-weight:bold ;
+        }
+
+        p {
+        color: white;
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+
+        footer {
+            background-color: #16c2d5;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 5px 0;
+        }
+
+        .footer-info div {
+            min-width: 200px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Disease Detection Using ML</h1>
+        <h2>"welcome to our website"</h2>
+    </header>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="/contact">Help</a> |
+        <a href="/register">Register</a>
+    </nav>
+    <div class="container">
+        <h2></h2>
+        <p>Welcome to the home page! Our clinic is dedicated to providing the best healthcare services to our patients. We offer a wide range of medical services and have a team of experienced healthcare professionals ready to assist you. Please use the navigation links above to learn more about us, contact us, or register for our services.</p>
+    </div>
+    <footer>
+        <div class="footer-info">
+            <div>
+                <strong>Contact Information</strong><br>
+                Phone: 6913918672<br>
+                Email: abhijitsaikia.com
+            </div>
+            <div>
+                <strong>Address</strong><br>
+                Dhemaji Engineering College<br>
+                Dhemaji, 781150
+            </div>
+            <div>
+                <strong>Location</strong><br>
+                <a href="https://maps.app.goo.gl/9BiFi1T2PA7D3dSQ9" target="_blank">Find us on Google Maps</a>
+            </div>
+        </div>
+        <p>&copy; 8th Sem Final Project</p>
+    </footer>
+</body>
+</html

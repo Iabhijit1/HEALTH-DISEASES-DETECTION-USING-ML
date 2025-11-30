@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Style the form container */
+        form {
+            border: 1px solid #ddd; /* Add a border to the box */
+            padding: 20px; /* Increase padding for spacing */
+            width: 400px; /* Increase the width of the box */
+        }
+              
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #16c2d5; /* Green background */
+            border: #10217d; /* Remove default border */
+            color: white; /* White text */
+            padding: 15px 32px; /* Increase padding for button size */
+            text-align: center; /* Center text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Display as block element */
+            font-size: 10px; /* Increase font size */
+            margin: 4px 2px; /* Add some margin */
+            cursor: pointer; /* Change cursor on hover */
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.473), 0 6px 16px 0 rgba(0, 0, 0, 0.473); /* Add 3D button effect */
+        }
+
+        /* Button hover effect */
+        input[type="submit"]:hover {
+            background-color: #10217d; /* Change background on hover */
+        }
+
+        #name, #address, #parents_name, #phone, #email, #dob {
+            width: 300px;  /* Adjust width */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.473);
+            background-color: #b2dff1;
+        }
+
+        header {
+            background-color: #16c2d5; /* cyan */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.473);
+        }
+
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #10217d;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #16c2d5;
+        }
+
+        .container {
+            width: 350px;
+            max-height: 420px;
+            margin: 0 auto;
+            color: #10217d;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.473);
+            border-radius: 8px;
+            flex: 1;
+            position: relative;
+            overflow: hidden; /* Ensure the image doesn't overflow from the container */
+            text-align: justify;
+            background-color: #71a8bc;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7; /* Adjust the opacity to control intensity */
+            z-index: -1; /* Place the background behind other content */
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.473);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Patient Registration</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="/contact">Contact</a> |
+        <a href="/register">Register</a>
+    </nav>
+    <div class="container">
+        <form action="/register" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+            
+            <label for="parents_name">Parents' Name:</label><br>
+            <input type="text" id="parents_name" name="parents_name" required><br><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+            
+            <input type="submit" value="Register ">
+        </form>
+    </div>
+</body>
+</html>

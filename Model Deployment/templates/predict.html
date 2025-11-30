@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #00FFFF; /* Light yellow background */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .headline-container {
+            background-color: #4CAF50; /* Green container background */
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: white; /* White headline color */
+            margin: 0;
+        }
+        form {
+            background-color: #f8f8f8; /* Light gray form background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333; /* Dark gray label color */
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            /* Light purple input background */
+            background-color: #f5f0ff;
+            /* Light purple text color */
+            color: #6a5acd;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green submit button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            /* Gradient background */
+            background-image: linear-gradient(to right, #4CAF50, #45a049);
+            /* Box shadow */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Transition */
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #4CAF80; /* Lighter green hover color */
+        }
+    </style>
+</head>
+<body>
+    <div class="headline-container">
+        <h1>Enter Test Values</h1>
+    </div>
+    <form action="/predict" method="post">
+        {% for feat in featurs %}
+        <label for="{{ feat }}">{{ feat }}</label>
+        <input type="text" id="{{ feat }}" name="{{ feat }}" required>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

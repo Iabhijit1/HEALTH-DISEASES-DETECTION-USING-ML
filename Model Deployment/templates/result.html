@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .main-headline {
+            text-align: center;
+            font-size: 24px;
+            color: #10217d;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        h1 {
+            background-color: #16c2d5;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin: 20px -20px 20px -20px;
+        }
+
+        h2 {
+            color: #10217d;
+            border-bottom: 2px solid #16c2d5;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background-color: red;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .print-btn {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #16c2d5;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .print-btn:hover {
+            background-color: #10217d;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            h1 {
+                background-color: #16c2d5;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            h2 {
+                color: #10217d;
+                -webkit-print-color-adjust: exact;
+            }
+
+            p {
+                color: #333;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: red;
+                color: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .main-headline {
+                color: #10217d;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-headline">HEALTH DISEASE DETECTION</div>
+        <h1>Prediction Result</h1>
+        <h2>Patient Information</h2>
+        <p><strong>Name:</strong> {{ user_info.name }}</p>
+        <p><strong>Phone Number:</strong> {{ user_info.phone }}</p>
+        <p><strong>Address:</strong> {{ user_info.address }}</p>
+        <p><strong>Parents' Name:</strong> {{ user_info.parents_name }}</p>
+        <p><strong>Email:</strong> {{ user_info.email }}</p>
+        <p><strong>Date of Birth:</strong> {{ user_info.dob }}</p>
+        
+        <h2>Predicted Disease</h2>
+        <p><strong>The predicted disease is:</strong> {{ predictions[0] }}</p>
+
+        <p class="highlight">This model is developed by Abhijit Saikia, Debraj Singh and Jyotiraj Nath</p>
+
+        <a href="#" class="print-btn" onclick="printPage()">Print Report</a>
+    </div>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
